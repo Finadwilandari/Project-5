@@ -27,15 +27,13 @@ function App() {
     }
   }
 
-  // Delete task 
-  ///////////////////////////
+  // Delete task //
   const deleteTask = (id) => {
     let newTasks = toDo.filter( task => task.id !== id)
     setToDo(newTasks);
   }
 
-  // Mark task as done or completed
-  ///////////////////////////
+  // Mark task as done or completed //
   const markDone = (id) => {
     let newTask = toDo.map( task => {
       if( task.id === id ) {
@@ -46,14 +44,12 @@ function App() {
     setToDo(newTask);
   }
 
-  // Cancel update
-  ///////////////////////////
+  // Cancel update //
   const cancelUpdate = () => {
     setUpdateData('');
   }
 
-  // Change task for update
-  ///////////////////////////
+
   const changeTask = (e) => {
     let newEntry = {
       id: updateData.id,
@@ -63,8 +59,7 @@ function App() {
     setUpdateData(newEntry);
   }
 
-  // Update task
-  ///////////////////////////
+  // Update task //
   const updateTask = () => {
     let filterRecords = [...toDo].filter( task => task.id !== updateData.id );
     let updatedObject = [...filterRecords, updateData]
